@@ -15,7 +15,7 @@ XPD is a deep learning model designed to detect pneumonia from chest X-ray image
 ## How to Use
 
 1. **Visit the Deployed Application:**
-   Access the deployed application at [Instrument Detector](https://instrument-classifier-bakhtiv1.streamlit.app/).
+   Access the deployed application at [X-Ray Pneumonia Detector (XPD)](https://pneumonia-detector-bakhti.streamlit.app/).
 
 2. **Upload an Image:**
    Use the file uploader to upload an image in one of the following formats: `.jpg`, `.jpeg`, `.png`, `.gif`, or `.svg`.
