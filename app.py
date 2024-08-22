@@ -3,7 +3,7 @@ from fastai.vision.all import *
 import pathlib
 import plotly.express as px
 temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+pathlib.PosixPath = temp
 
 
 st.markdown(
