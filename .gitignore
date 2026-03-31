@@ -1,0 +1,34 @@
+# Data
+data/
+
+# Model artifacts
+outputs/models/*.pkl
+outputs/models/*.pth
+Pneumonia_analizer.pkl
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.eggs/
+*.egg-info/
+
+# Environment
+.env
+.venv/
+venv/
+
+# W&B
+wandb/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
