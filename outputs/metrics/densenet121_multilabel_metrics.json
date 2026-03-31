@@ -1,0 +1,150 @@
+{
+  "per_class": {
+    "Atelectasis": {
+      "auc_roc": 0.7593209044202516,
+      "precision": 0.2998901501281582,
+      "recall": 0.5032258064516129,
+      "f1_score": 0.37581736836067453,
+      "threshold": 0.67,
+      "n_positive": 3255,
+      "n_total": 25596,
+      "prevalence": 0.12716831266880035
+    },
+    "Cardiomegaly": {
+      "auc_roc": 0.8820404497289336,
+      "precision": 0.40607734806629836,
+      "recall": 0.4140845070422535,
+      "f1_score": 0.4100418410041841,
+      "threshold": 0.67,
+      "n_positive": 1065,
+      "n_total": 25596,
+      "prevalence": 0.041608065366744995
+    },
+    "Consolidation": {
+      "auc_roc": 0.7431431880185851,
+      "precision": 0.16349887594522788,
+      "recall": 0.44077134986225897,
+      "f1_score": 0.2385211687537269,
+      "threshold": 0.64,
+      "n_positive": 1815,
+      "n_total": 25596,
+      "prevalence": 0.0709095150232315
+    },
+    "Edema": {
+      "auc_roc": 0.84240058631044,
+      "precision": 0.15426908150064683,
+      "recall": 0.5156756756756756,
+      "f1_score": 0.2374906646751307,
+      "threshold": 0.64,
+      "n_positive": 925,
+      "n_total": 25596,
+      "prevalence": 0.03613846004009247
+    },
+    "Effusion": {
+      "auc_roc": 0.8230682249169077,
+      "precision": 0.4597495527728086,
+      "recall": 0.6082185886402753,
+      "f1_score": 0.5236639807353894,
+      "threshold": 0.69,
+      "n_positive": 4648,
+      "n_total": 25596,
+      "prevalence": 0.18159087002277374
+    },
+    "Emphysema": {
+      "auc_roc": 0.9051868809760547,
+      "precision": 0.40558912386706947,
+      "recall": 0.49130832570905764,
+      "f1_score": 0.44435250310302027,
+      "threshold": 0.69,
+      "n_positive": 1093,
+      "n_total": 25596,
+      "prevalence": 0.04270198568701744
+    },
+    "Fibrosis": {
+      "auc_roc": 0.8257511282513029,
+      "precision": 0.128680479825518,
+      "recall": 0.271264367816092,
+      "f1_score": 0.17455621301775148,
+      "threshold": 0.59,
+      "n_positive": 435,
+      "n_total": 25596,
+      "prevalence": 0.016994843259453773
+    },
+    "Hernia": {
+      "auc_roc": 0.9146757313593392,
+      "precision": 0.4090909090909091,
+      "recall": 0.313953488372093,
+      "f1_score": 0.35526315789473684,
+      "threshold": 0.58,
+      "n_positive": 86,
+      "n_total": 25596,
+      "prevalence": 0.003359900088980794
+    },
+    "Infiltration": {
+      "auc_roc": 0.7031193459632586,
+      "precision": 0.37097063037249284,
+      "recall": 0.6805190538764783,
+      "f1_score": 0.4801808066759388,
+      "threshold": 0.65,
+      "n_positive": 6088,
+      "n_total": 25596,
+      "prevalence": 0.2378496676683426
+    },
+    "Mass": {
+      "auc_roc": 0.8056314730699939,
+      "precision": 0.2944243882872042,
+      "recall": 0.4287383177570093,
+      "f1_score": 0.34910820451843044,
+      "threshold": 0.66,
+      "n_positive": 1712,
+      "n_total": 25596,
+      "prevalence": 0.06688544899225235
+    },
+    "Nodule": {
+      "auc_roc": 0.7409760151967574,
+      "precision": 0.21999180663662432,
+      "recall": 0.33250773993808047,
+      "f1_score": 0.26479289940828404,
+      "threshold": 0.64,
+      "n_positive": 1615,
+      "n_total": 25596,
+      "prevalence": 0.06309579312801361
+    },
+    "Pleural_Thickening": {
+      "auc_roc": 0.7640017296737838,
+      "precision": 0.14285714285714285,
+      "recall": 0.36132983377077865,
+      "f1_score": 0.20475954387704512,
+      "threshold": 0.63,
+      "n_positive": 1143,
+      "n_total": 25596,
+      "prevalence": 0.044655416160821915
+    },
+    "Pneumonia": {
+      "auc_roc": 0.7202924143967795,
+      "precision": 0.052204585537918874,
+      "recall": 0.31027253668763105,
+      "f1_score": 0.0893719806763285,
+      "threshold": 0.57,
+      "n_positive": 477,
+      "n_total": 25596,
+      "prevalence": 0.018635723739862442
+    },
+    "Pneumothorax": {
+      "auc_roc": 0.8597013421342458,
+      "precision": 0.3937936011546789,
+      "recall": 0.6151822623074032,
+      "f1_score": 0.4801994719859196,
+      "threshold": 0.64,
+      "n_positive": 2661,
+      "n_total": 25596,
+      "prevalence": 0.10396155714988708
+    }
+  },
+  "macro": {
+    "auc_roc": 0.8063792438869024,
+    "precision": 0.2786491197173356,
+    "recall": 0.449075132421907,
+    "f1_score": 0.33057998604904004
+  }
+}

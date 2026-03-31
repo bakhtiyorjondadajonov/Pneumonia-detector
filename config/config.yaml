@@ -32,3 +32,53 @@ outputs:
   models_dir: "./outputs/models"
   figures_dir: "./outputs/figures"
   metrics_dir: "./outputs/metrics"
+
+# ─── Multi-Label Classification (NIH ChestX-ray14) ────────────────────────────
+
+multilabel:
+  dataset_path: "./data/nih-chestxray14"
+  csv_path: "./data/nih-chestxray14/Data_Entry_2017.csv"
+  image_dir: "./data/nih-chestxray14/images"
+  train_list: "./data/nih-chestxray14/train_val_list.txt"
+  test_list: "./data/nih-chestxray14/test_list.txt"
+  image_size: 224
+  batch_size: 64
+  num_workers: 8
+  valid_pct: 0.15
+  num_classes: 14
+  pos_weight_cap: 10.0
+  sample_fraction: 1.0    # full dataset for best results
+  seed: 42
+  classes:
+    - Atelectasis
+    - Cardiomegaly
+    - Consolidation
+    - Edema
+    - Effusion
+    - Emphysema
+    - Fibrosis
+    - Hernia
+    - Infiltration
+    - Mass
+    - Nodule
+    - Pleural_Thickening
+    - Pneumonia
+    - Pneumothorax
+
+  training:
+    architectures:
+      # - resnet34       # uncomment later to train all 3
+      # - resnet50       # uncomment later to train all 3
+      - densenet121
+    epochs_freeze: 3
+    epochs_unfreeze: 7
+    weight_decay: 0.01
+    use_fp16: true
+
+  evaluation:
+    optimize_thresholds: true
+    threshold_metric: "f1"
+
+  wandb:
+    project: "xray-multilabel-classifier"
+    enabled: false

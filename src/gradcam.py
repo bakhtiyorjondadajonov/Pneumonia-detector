@@ -89,6 +89,52 @@ class GradCAM:
 
         return cam.cpu().numpy()
 
+    def generate_multiple(
+        self, input_tensor: torch.Tensor, class_indices: list[int]
+    ) -> dict[int, np.ndarray]:
+        """Generate Grad-CAM heatmaps for multiple classes from a single forward pass.
+
+        Efficient for multi-label models: one forward pass, multiple backward passes.
+        Uses retain_graph=True to preserve the computation graph between calls.
+
+        Args:
+            input_tensor: Preprocessed input tensor (1, C, H, W).
+            class_indices: List of target class indices.
+
+        Returns:
+            Dict mapping class_idx to heatmap numpy array (H, W) in [0, 1].
+        """
+        self.model.eval()
+        cams = {}
+
+        # Single forward pass
+        output = self.model(input_tensor)
+
+        for i, class_idx in enumerate(class_indices):
+            is_last = (i == len(class_indices) - 1)
+
+            self.model.zero_grad()
+            output[0, class_idx].backward(retain_graph=not is_last)
+
+            # Compute CAM
+            weights = self.gradients.mean(dim=[2, 3], keepdim=True)
+            cam = (weights * self.activations).sum(dim=1, keepdim=True)
+            cam = F.relu(cam)
+            cam = F.interpolate(
+                cam, size=input_tensor.shape[2:], mode="bilinear", align_corners=False
+            )
+
+            cam = cam.squeeze()
+            cam_min, cam_max = cam.min(), cam.max()
+            if cam_max - cam_min > 1e-8:
+                cam = (cam - cam_min) / (cam_max - cam_min)
+            else:
+                cam = torch.zeros_like(cam)
+
+            cams[class_idx] = cam.cpu().numpy()
+
+        return cams
+
 
 def create_heatmap(cam: np.ndarray, colormap: str = "jet") -> np.ndarray:
     """Convert a Grad-CAM heatmap to a colored RGB image.

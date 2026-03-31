@@ -1,0 +1,10 @@
+[
+  {
+    "architecture": "densenet121",
+    "task": "multilabel",
+    "training_time_seconds": 1509.8,
+    "training_time_minutes": 25.2,
+    "total_params": 8014720,
+    "model_path": "outputs/models/densenet121_multilabel.pkl"
+  }
+]
