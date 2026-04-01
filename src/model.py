@@ -71,7 +71,10 @@ def get_target_layer(learn: Learner, arch_name: str):
     if arch_name.startswith("resnet"):
         return model[0][-1][-1]  # last block of the body
     elif arch_name == "densenet121":
-        return model[0].features.denseblock4
+        body = model[0]
+        if hasattr(body, 'features'):
+            return body.features.denseblock4
+        return body[0].denseblock4
     else:
         raise ValueError(f"No Grad-CAM target layer defined for '{arch_name}'")
 

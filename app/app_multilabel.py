@@ -37,8 +37,8 @@ st.markdown(
     .finding-possible { color: #f57c00; font-weight: bold; }
     .finding-unlikely { color: #388e3c; font-weight: bold; }
     .disclaimer {
-        background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px;
-        padding: 12px; margin-top: 20px; font-size: 0.85em;
+        background-color: #fff3cd; border: 1px solid #ffc107; border-radius: 8px;
+        padding: 12px; margin-top: 20px; font-size: 0.85em; color: #664d03;
     }
     </style>
     """,
@@ -309,7 +309,7 @@ with tab_findings:
         with col1:
             st.write(f"**{cls}**")
         with col2:
-            st.progress(min(prob, 1.0), text=f"{prob:.1%}")
+            st.progress(float(min(prob, 1.0)), text=f"{prob:.1%}")
         with col3:
             st.markdown(f'<span class="{css_class}">{severity}</span>', unsafe_allow_html=True)
 
